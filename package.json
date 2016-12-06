@@ -1,0 +1,59 @@
+{
+  "name": "@nju33/generator-library",
+  "version": "0.0.0",
+  "description": "My library generator",
+  "homepage": "",
+  "author": {
+    "name": "nju33",
+    "email": "nju33.ki@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "js",
+    "javascript",
+    "es",
+    "umd",
+    "browser",
+    "yeoman-generator"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "yeoman-generator": "^0.24.1",
+    "yosay": "^1.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "eslint-config-xo-space": "^0.15.0",
+    "gulp": "^3.9.1",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-eslint": "^3.0.1",
+    "gulp-exclude-gitignore": "^1.1.1",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-nsp": "^2.4.2",
+    "gulp-plumber": "^1.1.0",
+    "strman": "^1.3.1",
+    "yeoman-assert": "^2.2.1",
+    "yeoman-test": "^1.6.0"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "repository": "git@github.com:nju33/yo-generators.git",
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "MIT"
+}
