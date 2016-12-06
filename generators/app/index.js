@@ -8,15 +8,7 @@ const {toStudlyCaps} = require('strman');
 // http://yeoman.io/authoring/user-interactions.html
 
 module.exports = yeoman.Base.extend({
-  // constructor() {
-  //   generator.Base.apply(this, arguments)
-  //
-  //   this.option('name');
-  //   this.option('description');
-  // },
-
   prompting() {
-    // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the super-duper ' + chalk.red('generator-library') + ' generator!'
     ));
@@ -64,12 +56,11 @@ module.exports = yeoman.Base.extend({
 
   install() {
     this.runInstall('yarn', [],  err => {
-      if (err !== 0) {
+      if (err) {
         throw new Error(err);
       }
 
       console.log(yosay('Complete!'));
     });
-    // this.installDependencies();
   }
 });

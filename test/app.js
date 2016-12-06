@@ -1,18 +1,23 @@
 'use strict';
-var path = require('path');
-var assert = require('yeoman-assert');
-var helpers = require('yeoman-test');
+const path = require('path');
+const assert = require('yeoman-assert');
+const helpers = require('yeoman-test');
+const {toStudlyCaps} = require('strman');
 
-describe('generator-library:app', function () {
-  before(function () {
+let name = 'library';
+
+describe('generator-library:app', () => {
+  before(() => {
     return helpers.run(path.join(__dirname, '../generators/app'))
-      .withPrompts({someAnswer: true})
+      .withPrompts({name, description: ''})
       .toPromise();
   });
 
-  it('creates files', function () {
-    assert.file([
-      'dummyfile.txt'
-    ]);
+  it('creates name.js files', () => {
+    assert.file([`lib/${name}.js`]);
+  });
+
+  it('includes Name class', () => {
+    assert.noFileContent(`lib/${name}.js`, `Class ${toStudlyCaps(name)}`);
   });
 });
